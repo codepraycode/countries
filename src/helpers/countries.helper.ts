@@ -25,6 +25,7 @@ function parseCurrencies(currencies: obj[]): CountryCurrency[] {
         }
     });
 }
+
 function parseFlags(flags: obj): CountryFlag {
 
     return {
@@ -33,7 +34,6 @@ function parseFlags(flags: obj): CountryFlag {
         alt: flags.alt
     }
 }
-
 
 function parseCountryName(name: objj): CountryName {
     // if (!currencies) return [];
@@ -68,7 +68,6 @@ function parseCountryName(name: objj): CountryName {
     }
 }
 
-
 function parseLanguages(languages: obj[]): CountryLanguage[] {
 
     if (!languages) return [];
@@ -81,7 +80,6 @@ function parseLanguages(languages: obj[]): CountryLanguage[] {
         }
     });
 }
-
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function parseCountries(countries: any[]): Country[] {
@@ -99,20 +97,29 @@ function parseCountries(countries: any[]): Country[] {
             region: item.region,
             subregion: item.subregion,
             capital: item.capital,
-            borders: item.borders
+            borders: item.borders,
+
+            cca3: item.cca3,
+            cioc: item.cioc
         }
     })
 }
 
-
-
 export async function loadCountries() {
-    console.log("Loading countries")
-    const resp = await fetch(REST_COUNTRIES_ALL_URL);
+    // console.log("Loading countries")
+    const response = await fetch(REST_COUNTRIES_ALL_URL);
 
-    const all_countries = await resp.json();
+
+    if (!response.ok) {
+      throw new Error('Could not load countries')
+    }
+
+    const all_countries = await response.json();
 
 
     const countries = parseCountries(all_countries);
-    console.log(countries[100])
+    // console.log(countries[100])
+
+    return countries
 }
+

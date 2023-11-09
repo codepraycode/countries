@@ -20,7 +20,6 @@ export type CountryFlag = {
     alt: string
 }
 
-
 export interface Country {
     flags: CountryFlag,
     name: CountryName,
@@ -32,5 +31,9 @@ export interface Country {
     region: string,
     subregion: string,
     capital: string[],
-    borders: string[]
+    borders: string[],
+
+
+    cioc: string,
+    cca3: string
 }

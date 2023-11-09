@@ -1,18 +1,20 @@
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { loadCountries } from './helpers/countries'
+// import { useCountries, useCountry, useRegionCountries, useSearchCountry } from './hooks'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  // const data = useCountries();
+  // const data = useSearchCountry('nigeria')
+  // const data = useRegionCountries('africa')
+  // const data = useCountry('FRAnce')
 
-  useEffect(()=>{
-    (()=>{
-      loadCountries()
-    })()
-  },[])
+  // console.log(data);
+
+
 
   return (
     <>
