@@ -1,0 +1,27 @@
+// Break points
+$sm-breakpoint: 375px;
+$md-breakpoint: 1440px;
+
+$lm-blue: hsl(209, 23%, 22%);
+$dm-bg: hsl(207, 26%, 17%);
+$lm-text: hsl(200, 15%, 8%);
+$lm-input: hsl(0, 0%, 52%);
+$lm-bg: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+// Fonts sizes
+$fs-14: 14px;
+$fs-16: 16px;
+
+@mixin fontFamily {
+    font-family: 'Nunito Sans', system-ui,
+        Avenir,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+// Font weights
+$fw-300: 300;
+$fw-600: 600;
+$fw-800: 800;

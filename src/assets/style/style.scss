@@ -1,0 +1,260 @@
+@use './variables' as *;
+
+
+:root {
+    @include fontFamily;
+    line-height: 1.5;
+    font-weight: $fw-300;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* -------------------- */
+/* Reset                */
+/* -------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* Rest margins */
+body,
+h1,
+p {
+    margin: 0;
+}
+
+h1,
+p {
+    font-weight: 400;
+}
+
+
+body {
+    
+
+    font-size: $fs-14;
+    color: $lm-text;
+    background-color: $lm-bg;
+    
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 0;
+    margin: 0;    
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    color: inherit;
+}
+
+/* remove animations for people who turn them off */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* -------------------- */
+/* Utility classes      */
+/* -------------------- */
+
+.d-flex {
+    display: flex;
+
+    &.justify-between{
+        justify-content: space-between;
+    }
+    &.justify-around{
+        justify-content:space-around;
+    }
+    &.justify-center{
+        justify-content: center;
+    }
+
+
+    &.align-center {
+        align-items: center;
+    }
+    &.align-start {
+        align-items: flex-start;
+    }
+    &.align-end {
+        align-items: flex-end;
+    }
+}
+
+.d-block {
+    display: block;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    /* added line*/
+    border: 0;
+}
+
+.skip-to-content {
+    position: absolute;
+    background: hsl(var(--clr-white));
+    color: hsl(var(--clr-dark));
+    padding: .5em 1em;
+    margin-inline: auto;
+    z-index: 500;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0%);
+}
+
+
+/* Colors */
+
+
+.bg{
+
+    &-light {
+        background-color: $lm-bg;
+    }
+
+    &-dark {
+        background-color: $dm-bg;
+    }
+
+    &-transparent {
+        background-color: transparent;
+    }
+}
+
+
+.debug {
+    outline: 1px solid red;
+}
+
+// @media (prefers-color-scheme: light) {
+//     :root {
+//         color: #213547;
+//         background-color: #ffffff;
+//     }
+
+//     a:hover {
+//         color: #747bff;
+//     }
+
+//     button {
+//         background-color: #f9f9f9;
+//     }
+// }
+
+
+
+.container {
+    width: $md-breakpoint;
+    max-width: 100%;
+
+    margin-inline: auto;
+}
+
+.box-shadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.fw {
+    &-300 {
+        font-weight: 300;
+    }
+    &-600 {
+        font-weight: 600;
+    }
+    &-800 {
+        font-weight: 800;
+    }
+}
+
+.fs {
+    &-14 {
+        font-size: 14px;
+    }
+    &-16 {
+        font-size: 16px;
+    }
+
+    &-17 {
+        font-size: 1.3rem;
+    }
+}
+
+
+.pt {
+    &-1 {
+        padding-block: 1rem;
+    }
+}
+.px {
+    &-1 {
+        padding-inline: 1rem;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    &.border-none {
+        border: 0
+    }
+}
+
+.ml {
+    &-07 {
+        margin-left: .5rem;
+    }
+}
+
+
+ion-icon {
+    font-size: 1rem;
+}
