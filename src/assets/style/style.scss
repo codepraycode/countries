@@ -235,6 +235,11 @@ button {
         padding-block: 1rem;
     }
 }
+.py {
+    &-2 {
+        padding-block: 2.3rem;
+    }
+}
 .px {
     &-1 {
         padding-inline: 1rem;
@@ -243,9 +248,10 @@ button {
 
 .btn {
     cursor: pointer;
-    &.border-none {
-        border: 0
-    }
+}
+
+.border-none {
+    border: 0
 }
 
 .ml {
@@ -257,4 +263,28 @@ button {
 
 ion-icon {
     font-size: 1rem;
+}
+
+
+.search-group {
+    background-color: $white;
+
+    width: 24rem;
+    height: 2.5rem;
+    border-radius: .2rem;
+    
+    ion-icon {
+        margin: 1rem;
+    }
+    input {
+        font-family: inherit;
+        padding-block: .4rem;
+        width: 100%;
+
+        color: inherit;
+
+        &:focus{
+            outline: none;
+        }
+    }
 }
