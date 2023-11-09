@@ -30,7 +30,7 @@ export interface Country {
     languages: CountryLanguage[],
     region: string,
     subregion: string,
-    capital: string[],
+    capital: string,
     borders: string[],
 
 

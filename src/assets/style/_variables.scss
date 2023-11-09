@@ -21,6 +21,22 @@ $fs-16: 16px;
         sans-serif;
 }
 
+@mixin xrem($property, $value, $unit:rem) {
+    #{$property}: #{$value}#{$unit};
+}
+
+@mixin sm() {
+
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+@mixin md() {
+
+    @media (min-width: 1000px) {
+        @content;
+    }
+}
 // Font weights
 $fw-300: 300;
 $fw-600: 600;

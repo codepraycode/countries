@@ -81,6 +81,13 @@ function parseLanguages(languages: obj[]): CountryLanguage[] {
     });
 }
 
+
+function parseCountryCapital(capital:string[]) {
+    if (!capital || capital.length < 1) return '';
+
+    return capital[0]
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function parseCountries(countries: any[]): Country[] {
     return countries.map((item): Country =>{
@@ -96,7 +103,7 @@ function parseCountries(countries: any[]): Country[] {
             
             region: item.region,
             subregion: item.subregion,
-            capital: item.capital,
+            capital: parseCountryCapital(item.capital),
             borders: item.borders,
 
             cca3: item.cca3,
