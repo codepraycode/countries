@@ -37,6 +37,94 @@ $fs-16: 16px;
         @content;
     }
 }
+
+
+@mixin flex($prop) {
+    #{$prop} {
+        display: flex;
+
+
+        // @for $i from 0 to length($selectors) {
+        //     #{nth($selectors, $i + 1)} {
+        //         position: absolute;
+        //         height: $height;
+        //         margin-top: $i * $height;
+        //     }
+        // }
+        &.wrap{
+            flex-wrap: wrap;
+        }
+    
+        &.justify-between{
+            justify-content: space-between;
+        }
+    
+        &.justify-around {
+            justify-content: space-around;
+        }
+    
+        &.justify-evenly {
+            justify-content: space-evenly;
+        }
+    
+        &.justify-center {
+            justify-content: center;
+        }
+    
+    
+        &.align-center {
+            align-items: center;
+        }
+    
+        &.align-start {
+            align-items: flex-start;
+        }
+    
+        &.align-end {
+            align-items: flex-end;
+        }
+
+        &.column {
+            flex-direction: column;
+        }
+        &.row {
+            flex-direction: row;
+        }
+
+
+        // @include flex-gap();
+    }
+}
+
+
+@mixin flex-layout($prefix) {
+    #{$prefix} {
+        &-column {
+            flex-direction: column !important;
+        }
+
+        &-row {
+        flex-direction: row !important;
+        }
+    }
+}
+
+// @mixin flex-gap($row-selector:".r-gap", $column-selector:".c-gap") {
+//     @for $i from 1 through 10 {
+//         #{$row-selector}-#{$i} {
+//             row-gap: #{$i} + "rem";
+//         }
+//         #{$row-selector}-#{$i}:07 {
+//             row-gap: #{$i} + ".07rem";
+//         }
+//         #{$column-selector}-#{$i} {
+//             column-gap: #{$i} + "rem";
+//         }
+//         #{$column-selector}-#{$i}:07 {
+//             column-gap: #{$i} + ".07rem";
+//         }
+//     }
+// }
 // Font weights
 $fw-300: 300;
 $fw-600: 600;

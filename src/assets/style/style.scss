@@ -102,37 +102,13 @@ button {
 /* Utility classes      */
 /* -------------------- */
 
-.d-flex {
-    display: flex;
-
-    &.wrap {
-        flex-wrap: wrap;
-    }
-
-    &.justify-between{
-        justify-content: space-between;
-    }
-    &.justify-around{
-        justify-content:space-around;
-    }
-    &.justify-evenly {
-        justify-content:space-evenly;
-    }
-    &.justify-center{
-        justify-content: center;
-    }
 
 
-    &.align-center {
-        align-items: center;
-    }
-    &.align-start {
-        align-items: flex-start;
-    }
-    &.align-end {
-        align-items: flex-end;
-    }
-}
+
+@include flex(".d-flex");
+@include flex-layout(".md");
+
+
 
 .d-block {
     display: block;
@@ -218,9 +194,9 @@ button {
 
     margin-inline: auto;
 
-
-    @include sm {
-        padding-inline: 1rem;
+    padding-inline: 1rem;
+    @include md {
+        padding-inline: 2.5rem;
     }
 }
 
@@ -309,6 +285,9 @@ button {
     &-07 {
         margin-left: .5rem;
     }
+    &-1 {
+        margin-left: 1rem;
+    }
 }
 .mr {
     &-1 {
@@ -318,12 +297,40 @@ button {
         margin-right: .5rem;
     }
 }
+.my {
+    &-1 {
+        margin-block: 1rem;
+    }
+    &-1-07 {
+        margin-block: 1.5rem;
+    }
+    &-07 {
+        margin-block: .5rem;
+    }
+}
+.mx {
+    &-1 {
+        margin-inline: 1rem;
+    }
+    &-1-07 {
+        margin-inline: 1.5rem;
+    }
+    &-07 {
+        margin-inline: .5rem;
+    }
+}
 
 
 ion-icon {
     font-size: 1rem;
 }
 
+
+.text {
+    &-center {
+        text-align: center;
+    }
+}
 
 .search-group {
     background-color: $white;
@@ -391,4 +398,82 @@ article {
             height: 155px;
         }
     }
+}
+
+.bk-btn {
+    
+    width: 5rem;
+    padding-block: .4rem;
+}
+
+
+.tags {
+    
+    // flex-direction: column;
+    
+    @include md {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &>div {
+        gap: .4rem;
+    }
+}
+.tag {
+    display: inline-block;
+    padding: .2rem 1.5rem;
+}
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+
+    
+    
+
+    @include md {
+        flex-direction: row;
+        align-items: center;
+        column-gap: 4rem;
+
+    }
+
+// background-color: red;
+    .detail {
+        display: flex;
+        width: 500px;
+        max-width: 100%;
+
+        flex-direction: column;
+
+        @include sm {
+            row-gap: 1rem;
+        }
+
+
+        @include md {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+
+    }
+}
+
+.img-large {
+    height: 250px;
+    
+    width: 500px !important;
+
+    position: relative;
+    max-width: 100%;
+
+
+    @include md {
+        height: 400px;
+    }
+
+    // margin-inline: auto;
 }

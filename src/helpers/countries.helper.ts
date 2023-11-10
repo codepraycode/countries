@@ -104,7 +104,7 @@ function parseCountries(countries: any[]): Country[] {
             region: item.region,
             subregion: item.subregion,
             capital: parseCountryCapital(item.capital),
-            borders: item.borders,
+            borders: item.borders || [],
 
             cca3: item.cca3,
             cioc: item.cioc
