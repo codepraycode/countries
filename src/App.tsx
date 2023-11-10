@@ -3,14 +3,11 @@
 import Filter from "./components/Filter";
 import Header from "./components/Header";
 import Search from "./components/Search";
-import { useCountries } from "./hooks";
-import { Country } from "./utils/types";
+import { useCountryContext } from "./hooks";
 
 function App() {
-    const {countries:data, error} = useCountries();
 
-
-    const countries = error ? [] : (data as Country[]);
+    const {countries} = useCountryContext();
 
     return (
         <>

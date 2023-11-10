@@ -27,13 +27,13 @@ $fs-16: 16px;
 
 @mixin sm() {
 
-    @media (max-width: 900px) {
+    @media (max-width: 990px) {
         @content;
     }
 }
 @mixin md() {
 
-    @media (min-width: 1000px) {
+    @media (min-width: 1200px) {
         @content;
     }
 }

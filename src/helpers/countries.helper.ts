@@ -1,7 +1,7 @@
 // 
 
 import { REST_COUNTRIES_ALL_URL } from "../constants/request.constants";
-import { Country, CountryCurrency, CountryFlag, CountryLanguage, CountryName } from "../utils/types";
+import { Country, CountryCurrency, CountryFlag, CountryLanguage, CountryName } from "../@types/countries";
 
 
 type obj = {
