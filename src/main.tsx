@@ -5,6 +5,7 @@ import { CountryContextProvider } from './context';
 
 
 import './assets/style/style.scss';
+import { RouterProvider } from 'react-router-dom';
 
 
 const queryClient = new QueryClient();
@@ -13,7 +14,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
     <CountryContextProvider>
 
-      <App />
+      {/* <App /> */}
+      <RouterProvider router={App}/>
     </CountryContextProvider>
   </QueryClientProvider>,
 )

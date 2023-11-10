@@ -1,68 +1,40 @@
 // import React from "react";
 
-import Filter from "./components/Filter";
+
+import { Outlet, createBrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
-import Search from "./components/Search";
-import { useCountryContext } from "./hooks";
+import Country from "./pages/country";
+import MainPage from "./pages/main";
 
-function App() {
-
-    const {countries} = useCountryContext();
+function AppLayout() {
 
     return (
         <>
             <Header/>
-
-            <section>
-                
-                <div className="container d-flex align-center justify-between py-2">
-                    <Search />
-
-                    <Filter />
-                </div>
-            </section>
-
-            <section className="container d-flex wrap x">
-
-                {
-                    countries?.map((item, index)=>{
-                        return (
-                            <article key={index} className="box-shadow bg-white">
-                                <div className="img">
-                                    <img
-                                        src={item.flags.svg}
-                                        alt={item.flags.alt}
-                                    />
-                                </div>
-
-                                <div className="details">
-
-                                    <h2 className="fw-800 fs-16">
-                                        {item.name.common}
-                                    </h2>
-                                    
-                                    <div>
-                                        <span className="fw-600 mr-07">Population:</span>
-                                        {item.population}
-                                    </div>
-                                    
-                                    <div>
-                                        <span className="fw-600 mr-07">Region:</span>
-                                        {item.region}
-                                    </div>
-
-                                    <div>
-                                        <span className="fw-600 mr-07">Capital:</span>
-                                        {item.capital}
-                                    </div>
-                                </div>
-                            </article>
-                        )
-                    })
-                }
-            </section>
+            <Outlet />
         </>
     )
 }
+
+
+
+
+const App = createBrowserRouter([
+    {
+        path:'/',
+        element: <AppLayout/>,
+        errorElement: <p>Oops.... page does not exist</p>,
+        children: [
+            {
+                path: '',
+                element: <MainPage />
+            },
+            {
+                path: ':code',
+                element: <Country />
+            }
+        ]
+    }
+]);
 
 export default App;
