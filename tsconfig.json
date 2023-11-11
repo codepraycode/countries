@@ -23,11 +23,8 @@
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "paths": {
-    "@/*": [
+    "@*": [
       "src/*"
     ],
-    "@@shared/*": [
-      "../shared-lib/*"
-    ]
   },
 }
