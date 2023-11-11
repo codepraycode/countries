@@ -1,4 +1,4 @@
-import IonIcon from "@/components/Ion";
+import IonIcon from "@components/Ion";
 
 const Header = () => {
     return (
