@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { useCountry } from "../hooks";
-import { Country } from "../@types/countries";
+import { useCountry } from "@hooks";
+import { Country } from "@@types/countries";
+import IonIcon from "@components/Ion";
 
 
 
@@ -115,7 +116,7 @@ const CountryData = () => {
                         navigation(-1)
                     }}
                 >
-                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    <IonIcon name="arrow-back-outline"/>
                     <span className="ml-07">Back</span>
                 </span>
             </div>

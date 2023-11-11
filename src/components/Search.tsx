@@ -1,12 +1,12 @@
-import IonIcon from "@components/Ion";
 import { useCountryContext } from "@hooks";
+import IonIcond from "./Ion";
 
 const Search = () => {
     const {search} = useCountryContext();
 
     return (
         <div className="search-group box-shadow d-flex align-center justify-start">
-            <IonIcon name="search-outline"/>
+            <IonIcond name="search-outline"/>
             <input
                 name="search"
                 placeholder="Search for a country..."
