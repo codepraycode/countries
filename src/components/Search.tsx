@@ -1,4 +1,4 @@
-import { useCountryContext } from "@/hooks";
+import { useCountryContext } from "@hooks";
 import IonIcon from "@components/Ion";
 
 const Search = () => {
