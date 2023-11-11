@@ -1,4 +1,4 @@
-import IonIcon from "./Ion";
+import IonIcon from "@components/Ion";
 
 const Header = () => {
     return (
@@ -9,7 +9,7 @@ const Header = () => {
                 <h1 className="fw-800 fs-md-17 fs-sm-17">Where in the world?</h1>
 
                 <button className="d-flex align-center btn border-none bg-transparent">
-                    <IonIcon name="moon-outlin"/>
+                    <IonIcon name="moon-outline"/>
 
                     <span className="ml-07 fs-16 fw-600">Dark Mode</span>
                 </button>
