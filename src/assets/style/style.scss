@@ -1,112 +1,18 @@
 @use './variables' as *;
+@use './mixins' as mixins;
 
 
-:root {
-    @include fontFamily;
-    line-height: 1.5;
-    font-weight: $fw-300;
-
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-}
-
-/* -------------------- */
-/* Reset                */
-/* -------------------- */
-
-/* https://piccalil.li/blog/a-modern-css-reset/ */
-
-/* Box sizing */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+@import './reset';
+@import './theme';
 
 
-/* Rest margins */
-body,
-h1,
-h2
-p {
-    margin: 0;
-}
-
-h1,
-h2
-p {
-    font-weight: 400;
-}
-
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-body {
-    
-
-    font-size: $fs-14;
-    color: $lm-text;
-    background-color: $lm-bg;
-    
-    min-height: 100vh;
-    width: 100%;
-
-    padding: 0;
-    margin: 0;    
-}
-
-/* Make images easier to work with */
-img,
-picture {
-    width: 100%;
-    // height: 100%;
-    height: auto;
-}
-
-/* make form elements easier */
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-button {
-    color: inherit;
-}
-
-/* remove animations for people who turn them off */
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
 
 /* -------------------- */
 /* Utility classes      */
 /* -------------------- */
 
-
-
-
-@include flex(".d-flex");
-@include flex-layout(".md");
+@include mixins.flex(".d-flex");
+@include mixins.flex-layout(".md");
 
 
 
@@ -130,8 +36,9 @@ button {
 
 .skip-to-content {
     position: absolute;
-    background: hsl(var(--clr-white));
-    color: hsl(var(--clr-dark));
+
+    color: inherit;
+
     padding: .5em 1em;
     margin-inline: auto;
     z-index: 500;
@@ -147,45 +54,9 @@ button {
 /* Colors */
 
 
-.bg{
-
-    &-white {
-        background-color: $white;
-    }
-    &-light {
-        background-color: $lm-bg;
-    }
-
-    &-dark {
-        background-color: $dm-bg;
-    }
-
-    &-transparent {
-        background-color: transparent;
-    }
-}
-
-
 .debug {
     outline: 1px solid red;
 }
-
-// @media (prefers-color-scheme: light) {
-//     :root {
-//         color: #213547;
-//         background-color: #ffffff;
-//     }
-
-//     a:hover {
-//         color: #747bff;
-//     }
-
-//     button {
-//         background-color: #f9f9f9;
-//     }
-// }
-
-
 
 .container {
     width: $md-breakpoint;
@@ -195,7 +66,7 @@ button {
     margin-inline: auto;
 
     padding-inline: 1rem;
-    @include md {
+    @include mixins.md {
         padding-inline: 2.5rem;
     }
 }
@@ -228,7 +99,7 @@ button {
         font-size: 1.3rem;
     }
 
-    @include md {
+    @include mixins.md {
         &-md-14 {
             font-size: 14px;
         }
@@ -241,7 +112,7 @@ button {
             font-size: 1.3rem;
         }
     }
-    @include sm {
+    @include mixins.sm {
         &-sm-14 {
             font-size: 14px;
         }
@@ -321,8 +192,15 @@ button {
 }
 
 
-ion-icon {
+.icon {
     font-size: 1rem;
+
+    &--sm {
+        font-size: .8rem;
+    }
+
+        position: relative;
+        top: .2rem;
 }
 
 
@@ -332,40 +210,36 @@ ion-icon {
     }
 }
 
+
 .search-group {
-    background-color: $white;
 
     width: 24rem;
 
     max-width: 90%;
     height: 2.5rem;
     border-radius: .2rem;
-    ion-icon {
-        margin: 1rem;
+
+    .icon{
+        // display: inline-block;
+        margin-inline: 1rem;
     }
+
     input {
-        font-family: inherit;
         padding-block: .4rem;
         width: 100%;
-
-        color: inherit;
-
-        &:focus{
-            outline: none;
-        }
     }
 }
 
 .x {
     
     
-    @include xrem(row-gap, 4);
-    @include xrem(column-gap, 3);
+    @include mixins.xrem(row-gap, 4);
+    @include mixins.xrem(column-gap, 3);
 
-    @include sm {
+    @include mixins.sm {
         justify-content: center;
     }
-    @include md {
+    @include mixins.md {
         // justify-content:first baseline;
         gap: 5.65rem;
     }
@@ -391,7 +265,7 @@ article {
     }
 
 
-    @include md {
+    @include mixins.md {
         width: 275px;
 
         .img {
@@ -411,7 +285,7 @@ article {
     
     // flex-direction: column;
     
-    @include md {
+    @include mixins.md {
         display: flex;
         flex-direction: row;
     }
@@ -433,14 +307,13 @@ article {
     
     
 
-    @include md {
+    @include mixins.md {
         flex-direction: row;
         align-items: center;
         column-gap: 4rem;
 
     }
 
-// background-color: red;
     .detail {
         display: flex;
         width: 500px;
@@ -448,12 +321,12 @@ article {
 
         flex-direction: column;
 
-        @include sm {
+        @include mixins.sm {
             row-gap: 1rem;
         }
 
 
-        @include md {
+        @include mixins.md {
             flex-direction: row;
             justify-content: space-between;
         }
@@ -471,9 +344,10 @@ article {
     max-width: 100%;
 
 
-    @include md {
+    @include mixins.md {
         height: 400px;
     }
 
     // margin-inline: auto;
 }
+

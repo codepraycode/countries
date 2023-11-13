@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Filter from "../components/Filter"
 import Search from "../components/Search"
 import { useCountryContext } from "../hooks";
@@ -24,8 +25,8 @@ const MainPage = () => {
                 {
                     countries?.map((item, index)=>{
                         return (
-                            <a href={`/${item.cca3}`} className="d-block" key={index}>
-                                <article className="box-shadow bg-white">
+                            <Link to={`/${item.cca3}`} className="d-block" key={index}>
+                                <article className="box-shadow bg-elem">
                                     <div className="img">
                                         <img
                                             src={item.flags.svg}
@@ -55,7 +56,7 @@ const MainPage = () => {
                                         </div>
                                     </div>
                                 </article>
-                            </a>
+                            </Link>
                         )
                     })
                 }

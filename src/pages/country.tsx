@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useCountry } from "@hooks";
 import { Country } from "@@types/countries";
 import IonIcon from "@components/Ion";
@@ -9,7 +9,6 @@ const CountryTemplate = ({country}: {country: Country}) => (
     <>
         <div
             className="img-large d-flex align-center"
-            // style={{backgroundImage: url.toString()}}
         >
             <img
                 src={country.flags.svg}
@@ -81,7 +80,7 @@ const CountryTemplate = ({country}: {country: Country}) => (
                     {
                         country.borders.map((item, key)=>(
                             
-                            <a href={`/${item}`} key={key} className="fs-14 box-shadow tag btn mx-07">{item}</a>
+                            <Link to={`/${item}`} key={key} className="fs-14 box-shadow tag btn mx-07 bg-elem">{item}</Link>
                         ))
                     }
                 </div>
@@ -111,12 +110,16 @@ const CountryData = () => {
         <>
             <div className="container my-1 py-2">
                 <span
-                    className="box-shadow bk-btn btn d-flex align-center justify-center bg-white"
+                    className="box-shadow bk-btn btn d-flex align-center justify-center bg-elem"
                     onClick={()=>{
                         navigation(-1)
                     }}
                 >
-                    <IonIcon name="arrow-back-outline"/>
+                    <div className="icon">
+                        <IonIcon name="arrow-back-outline"/>
+                    </div>
+
+
                     <span className="ml-07">Back</span>
                 </span>
             </div>

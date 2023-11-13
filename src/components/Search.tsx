@@ -5,12 +5,14 @@ const Search = () => {
     const {search} = useCountryContext();
 
     return (
-        <div className="search-group box-shadow d-flex align-center justify-start">
-            <IonIcond name="search-outline"/>
+        <div className="search-group box-shadow d-flex align-center justify-start bg-elem">
+            <span className="icon">
+                <IonIcond name="search-outline"/>
+            </span>
             <input
                 name="search"
                 placeholder="Search for a country..."
-                className="bg-transparent border-none"
+                className="bg-transparent border-none text-white no-outline"
                 onChange={(e)=>{
                     const value = e.target.value;
 
