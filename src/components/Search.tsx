@@ -12,7 +12,7 @@ const Search = () => {
             <input
                 name="search"
                 placeholder="Search for a country..."
-                className="bg-transparent border-none text-white no-outline"
+                className="bg-transparent border-none text no-outline"
                 onChange={(e)=>{
                     const value = e.target.value;
 
