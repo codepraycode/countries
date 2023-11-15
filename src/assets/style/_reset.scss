@@ -103,6 +103,13 @@ input {
     }
 }
 
+
+
+ul[role="list"] {
+    padding: 0;
+    list-style: none;
+}
+
 /* remove animations for people who turn them off */
 @media (prefers-reduced-motion: reduce) {
 

@@ -11,14 +11,12 @@ const MainPage = () => {
 
     return (
         <>
-            <section>
-                
-                <div className="container d-flex align-center justify-between py-2">
-                    <Search />
+            <div className="container not-hidden d-flex align-center justify-between py-2">
+                <Search />
 
-                    <Filter />
-                </div>
-            </section>
+                <Filter />
+            </div>
+                
 
             <section className="container d-flex wrap x">
 
