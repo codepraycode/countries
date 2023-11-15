@@ -1,8 +1,11 @@
+import { useCountries } from "@hooks";
 import IonIcon from "@reacticons/ionicons";
 import { useEffect } from "react";
 
 
 const Filter = () => {
+
+    const { regions } = useCountries();
 
     useEffect(()=>{
         
@@ -27,6 +30,9 @@ const Filter = () => {
         )()
 
     }, [])
+
+
+
     return (
         <div className="dropdown box-shadow" id="dropdown">
             <button className="fs-14 fw-300 btn border-none px-1 bg-elem d-flex justify-between align-center">
@@ -37,18 +43,11 @@ const Filter = () => {
             </button>
 
             <ul role="list" className="dropdown-menu bg-elem">
-                <li className="fs-14">
-                    Item 1
-                </li>
-                <li className="fs-14">
-                    Item 2
-                </li>
-                <li className="fs-14">
-                    Item 3
-                </li>
-                <li className="fs-14">
-                    Item 3
-                </li>
+                {regions.map((item, index)=> (
+                    <li className="fs-14" key={index}>
+                        {item}
+                    </li>
+                ))}
             </ul>
         </div>
     )

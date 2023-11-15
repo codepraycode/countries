@@ -15,8 +15,16 @@ export function useCountries() {
 
 
 
+    const regions = useMemo(()=>{
+        if (!countries) return [];
+
+        return [... new Set(countries.map((item)=>item.region))].sort();
+    }, [countries])
+
+
     return {
         countries,
+        regions,
         error,
         loading
     }

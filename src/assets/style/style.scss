@@ -397,7 +397,9 @@ article {
         opacity: 0;
 
         li {
-            padding: .3rem 1rem;
+            padding: .2rem 1rem;
+
+            cursor: pointer;
 
             &:last-of-type {
                 padding-bottom: .5rem;
