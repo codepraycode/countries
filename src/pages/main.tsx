@@ -28,7 +28,7 @@ const MainPage = () => {
                                     <div className="img">
                                         <img
                                             src={item.flags.svg}
-                                            alt={item.flags.alt}
+                                            alt={item.flags.alt || "Country flag"}
                                         />
                                     </div>
 

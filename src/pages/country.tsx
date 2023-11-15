@@ -12,7 +12,7 @@ const CountryTemplate = ({country}: {country: Country}) => (
         >
             <img
                 src={country.flags.svg}
-                alt={country.flags.alt}
+                alt={country.flags.alt || "Country flag"}
             />
         </div>
 
